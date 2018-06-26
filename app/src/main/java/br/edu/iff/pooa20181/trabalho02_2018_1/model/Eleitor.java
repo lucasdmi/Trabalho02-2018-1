@@ -22,7 +22,7 @@ public class Eleitor {
         this.dataNascimento = dataNascimento;
 
     }
-    
+
     public int getId() {
         return id;
     }
