@@ -13,12 +13,13 @@ import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 public class Principal extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     private String[] activities = {"ListaEleitor"};
+    private String[] itemMenu = {"Eleitor"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, activities);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemMenu);
 
         ListView listView = (ListView)findViewById(R.id.listaMenu);
         listView.setAdapter(adapter);
@@ -28,7 +29,7 @@ public class Principal extends AppCompatActivity implements AdapterView.OnItemCl
 
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
         Intent intent = null;
 
         try {
@@ -37,6 +38,8 @@ public class Principal extends AppCompatActivity implements AdapterView.OnItemCl
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        intent = new Intent(this, ListaEleitor.class);
         startActivity(intent);
     }
 }

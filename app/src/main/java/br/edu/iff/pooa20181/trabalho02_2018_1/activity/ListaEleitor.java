@@ -1,8 +1,10 @@
 package br.edu.iff.pooa20181.trabalho02_2018_1.activity;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,8 +23,10 @@ public class ListaEleitor extends AppCompatActivity implements ClickRecyclerView
 
     private Realm realm;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_eleitor);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -34,8 +38,9 @@ public class ListaEleitor extends AppCompatActivity implements ClickRecyclerView
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(ListaEleitor.this, EleitorDetalhe.class);
+                intent.putExtra("id", 0);
+                startActivity(intent);
             }
         });
     }
@@ -59,8 +64,9 @@ public class ListaEleitor extends AppCompatActivity implements ClickRecyclerView
     @Override
     public void onClick(Object object) {
         Eleitor eleitor = (Eleitor) object;
-
-
+        Intent intent = new Intent( ListaEleitor.this, EleitorDetalhe.class);
+        intent.putExtra("id", eleitor.getId());
+        startActivity(intent);
     }
 
     public void finish(){

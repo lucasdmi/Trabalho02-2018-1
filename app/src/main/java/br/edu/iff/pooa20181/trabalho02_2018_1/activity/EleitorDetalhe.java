@@ -78,6 +78,27 @@ public class EleitorDetalhe extends AppCompatActivity {
         }
 
 
+        btnAdicionar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                salvar();
+            }
+        });
+
+        btnExcluir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                excluir();
+            }
+        });
+
+        btnAlterar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alterar();
+            }
+        });
+
 
 
 
