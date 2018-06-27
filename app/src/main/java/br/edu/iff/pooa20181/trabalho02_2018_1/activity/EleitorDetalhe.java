@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 import br.edu.iff.pooa20181.trabalho02_2018_1.model.Eleitor;
 import io.realm.Realm;
@@ -22,6 +26,7 @@ public class EleitorDetalhe extends AppCompatActivity {
     Eleitor eleitor;
     private Realm realm;
 
+    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +59,9 @@ public class EleitorDetalhe extends AppCompatActivity {
 
             edtNome.setText(eleitor.getNome());
             edtNomeMae.setText(eleitor.getNomeMae());
-            edtData.setText(eleitor.getDataNascimento().toString());
+
+            edtData.setText(formato.format((Date) eleitor.getDataNascimento()));
+
             edtNumeroTitulo.setText(eleitor.getNumeroTitulo());
             edtZona.setText(eleitor.getZona());
             edtSecao.setText(eleitor.getSecao());
@@ -76,6 +83,17 @@ public class EleitorDetalhe extends AppCompatActivity {
 
     }
 
+    public void excluir()
+    {
+        realm.beginTransaction();
+        eleitor.deleteFromRealm();
+        realm.commitTransaction();
+        realm.close();
+        Toast.makeText(this, "Eleitor Excluido", Toast.LENGTH_LONG).show();
+        this.finish();
+
+    }
+
     public void salvar()
     {
         int proximoID = 1;
@@ -88,6 +106,8 @@ public class EleitorDetalhe extends AppCompatActivity {
         Eleitor eleitor = new Eleitor();
         eleitor.setId(proximoID);
 
+        setEgrava(eleitor);
+
 
         realm.copyToRealm(eleitor);
         realm.commitTransaction();
@@ -97,8 +117,34 @@ public class EleitorDetalhe extends AppCompatActivity {
         this.finish();
     }
 
-    public void excluir()
+    public void alterar()
     {
-        
+        realm.beginTransaction();
+        setEgrava(eleitor);
+
+        realm.copyFromRealm(eleitor);
+        realm.commitTransaction();
+        realm.close();
+
+        Toast.makeText(this, "Eleitor Alterado", Toast.LENGTH_LONG).show();
+        this.finish();
     }
+
+    public void setEgrava(Eleitor eleitor)
+    {
+        eleitor.setNome(edtNome.getText().toString());
+        eleitor.setNomeMae(edtNomeMae.getText().toString());
+
+        try {
+            eleitor.setDataNascimento((Date) formato.parse(edtData.getText().toString()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        eleitor.setNumeroTitulo(edtNumeroTitulo.getText().toString());
+        eleitor.setZona(edtZona.getText().toString());
+        eleitor.setSecao(edtSecao.getText().toString());
+        eleitor.setMunicipio(edtMunicipio.getText().toString());
+    }
+
 }
