@@ -3,6 +3,7 @@ package br.edu.iff.pooa20181.trabalho02_2018_1.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,14 +33,16 @@ public class Principal extends AppCompatActivity implements AdapterView.OnItemCl
     public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
         Intent intent = null;
 
+
         try {
             Class obj =    Class.forName("br.edu.iff.pooa20181.trabalho02_2018_1.activity." + activities[position]);
+
             intent = new Intent(this, obj);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        intent = new Intent(this, ListaEleitor.class);
+
         startActivity(intent);
     }
 }

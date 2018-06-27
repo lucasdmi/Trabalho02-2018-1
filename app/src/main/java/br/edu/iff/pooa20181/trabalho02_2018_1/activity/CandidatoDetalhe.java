@@ -15,7 +15,7 @@ import io.realm.Realm;
 public class CandidatoDetalhe extends AppCompatActivity {
 
     EditText edtNome, edtPartido, edtCargo, edtNumeroVotos, edtNumeroUrna, edtEstado, edtMunicipio;
-    Button btnAdicionar, btnAlterar, btnExcluir;
+    Button btAdicionar, btAlterar, btExcluir;
 
 
 
@@ -35,9 +35,9 @@ public class CandidatoDetalhe extends AppCompatActivity {
         edtEstado = (EditText) findViewById(R.id.edtEstado);
         edtMunicipio = (EditText) findViewById(R.id.edtMunicipio);
 
-        btnAdicionar = (Button) findViewById(R.id.btnAdicionar);
-        btnAlterar = (Button) findViewById(R.id.btnAlterar);
-        btnExcluir = (Button) findViewById(R.id.btnExcluir);
+        btAdicionar = (Button) findViewById(R.id.btAdicionar);
+        btAlterar = (Button) findViewById(R.id.btAlterar);
+        btExcluir = (Button) findViewById(R.id.btExcluir);
 
         Intent intent = getIntent();
         id = (int) intent.getSerializableExtra("id");
@@ -45,9 +45,9 @@ public class CandidatoDetalhe extends AppCompatActivity {
 
         if(id != 0)
         {
-            btnAdicionar.setEnabled(false);
-            btnAdicionar.setClickable(false);
-            btnAdicionar.setVisibility(View.INVISIBLE);
+            btAdicionar.setEnabled(false);
+            btAdicionar.setClickable(false);
+            btAdicionar.setVisibility(View.INVISIBLE);
 
             candidato = realm.where(Candidato.class).equalTo("id", id).findFirst();
 
@@ -60,29 +60,29 @@ public class CandidatoDetalhe extends AppCompatActivity {
             edtMunicipio.setText(candidato.getMunicipio());
         }
         else{
-            btnAlterar.setEnabled(false);
-            btnAlterar.setClickable(false);
-            btnAlterar.setVisibility(View.INVISIBLE);
-            btnExcluir.setEnabled(false);
-            btnExcluir.setClickable(false);
-            btnExcluir.setVisibility(View.INVISIBLE);
+            btAlterar.setEnabled(false);
+            btAlterar.setClickable(false);
+            btAlterar.setVisibility(View.INVISIBLE);
+            btExcluir.setEnabled(false);
+            btExcluir.setClickable(false);
+            btExcluir.setVisibility(View.INVISIBLE);
         }
 
-        btnAdicionar.setOnClickListener(new View.OnClickListener() {
+        btAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 salvar();
             }
         });
 
-        btnExcluir.setOnClickListener(new View.OnClickListener() {
+        btExcluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 excluir();
             }
         });
 
-        btnAlterar.setOnClickListener(new View.OnClickListener() {
+        btAlterar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 alterar();
@@ -133,7 +133,7 @@ public class CandidatoDetalhe extends AppCompatActivity {
         realm.commitTransaction();
         realm.close();
 
-        Toast.makeText(this, "Eleitor Alterado", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Candidato Alterado", Toast.LENGTH_LONG).show();
         this.finish();
     }
 
@@ -141,6 +141,7 @@ public class CandidatoDetalhe extends AppCompatActivity {
     {
         candidato.setNome(edtNome.getText().toString());
         candidato.setPartido(edtPartido.getText().toString());
+        candidato.setCargo(edtCargo.getText().toString());
         candidato.setNumeroVotos(edtNumeroVotos.getText().toString());
         candidato.setNumeroUrna(edtNumeroUrna.getText().toString());
         candidato.setEstado(edtEstado.getText().toString());

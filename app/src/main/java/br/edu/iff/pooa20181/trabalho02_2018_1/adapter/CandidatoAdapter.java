@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
-
+import br.edu.iff.pooa20181.trabalho02_2018_1.adapter.ClickRecyclerViewListener;
 import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 import br.edu.iff.pooa20181.trabalho02_2018_1.model.Candidato;
 
@@ -28,9 +28,9 @@ public class CandidatoAdapter extends RecyclerView.Adapter{
     }
 
 
-    @NonNull
+
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
                 .inflate(R.layout.item_candidato_cv, parent, false);
         CandidatoViewHolder candidatoViewHolder = new CandidatoViewHolder(view);
@@ -78,7 +78,7 @@ public class CandidatoAdapter extends RecyclerView.Adapter{
             nomeCandidato = (TextView) itemView.findViewById(R.id.tvNome);
             partido = (TextView) itemView.findViewById(R.id.tvPartido);
             numeroUrna = (TextView) itemView.findViewById(R.id.tvNumeroUrna);
-            cargo = (TextView) itemView.findViewById(R.id.tvSecao);
+            cargo = (TextView) itemView.findViewById(R.id.tvCargo);
 
             txtNomeCandidato = (TextView) itemView.findViewById(R.id.textNome);
             txtPartido = (TextView) itemView.findViewById(R.id.textPartido);
