@@ -4,4 +4,5 @@
     <string name="tNome">Nome do Eleitor:</string>
     <string name="tNumero">Número do Título:</string>
     <string name="tsecao">Seção Eleitoral:</string>
+    <string name="title_activity_lista_eleitor">ListaEleitor</string>
 </resources>
