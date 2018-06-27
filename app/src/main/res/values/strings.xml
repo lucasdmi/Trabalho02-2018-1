@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">Trabalho02-2018-1</string>
-    <string name="tzona">Zona Eleitoral:</string>
-    <string name="tNome">Nome do Eleitor:</string>
-    <string name="tNumero">Número do Título:</string>
-    <string name="tsecao">Seção Eleitoral:</string>
+    <string name="tzona">Zona Eleitoral</string>
+    <string name="tNome">Nome do Eleitor</string>
+    <string name="tNomeMae">Nome da Mãe</string>
+    <string name="tData">Data de Nascimento</string>
+    <string name="tNumero">Número do Título</string>
+    <string name="tsecao">Seção Eleitoral</string>
+    <string name="tmunicipio">Município</string>
+    <string name="btAdicionar">Adicionar</string>
+    <string name="btAlterar">Alterar</string>
+    <string name="btExcluir">Excluir</string>
     <string name="title_activity_lista_eleitor">ListaEleitor</string>
 </resources>
