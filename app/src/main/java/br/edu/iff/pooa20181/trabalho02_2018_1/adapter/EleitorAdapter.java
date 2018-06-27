@@ -51,11 +51,10 @@ public class EleitorAdapter extends RecyclerView.Adapter{
         eleitorHolder.numeroTitulo.setText(eleitor.getNumeroTitulo());
         eleitorHolder.zona.setText(eleitor.getZona());
         eleitorHolder.secao.setText(eleitor.getSecao());
-
-
-
-
-
+        eleitorHolder.txtNumeroTitulo.setText("Numero do Título:");
+        eleitorHolder.txtSecao.setText("Seção Eleitoral");
+        eleitorHolder.txtNomeEleitor.setText("Nome do Eleitor:");
+        eleitorHolder.txtZona.setText("Zona Eleitoral:");
 
     }
 
@@ -70,6 +69,10 @@ public class EleitorAdapter extends RecyclerView.Adapter{
         private final TextView numeroTitulo;
         private final TextView zona;
         private final TextView secao;
+        private final TextView txtNomeEleitor;
+        private final TextView txtNumeroTitulo;
+        private final TextView txtZona;
+        private final TextView txtSecao;
 
         public EleitorViewHolder(View itemView){
             super(itemView);
@@ -78,6 +81,11 @@ public class EleitorAdapter extends RecyclerView.Adapter{
             numeroTitulo = (TextView) itemView.findViewById(R.id.tvNumeroTitulo);
             zona = (TextView) itemView.findViewById(R.id.tvZona);
             secao = (TextView) itemView.findViewById(R.id.tvSecao);
+            txtNomeEleitor = (TextView) itemView.findViewById(R.id.textNome);
+            txtNumeroTitulo = (TextView) itemView.findViewById(R.id.textNome);
+            txtZona = (TextView) itemView.findViewById(R.id.textZona);
+            txtSecao = (TextView) itemView.findViewById(R.id.tvSecao);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
