@@ -7,7 +7,7 @@
     tools:context=".activity.CandidatoDetalhe">
 
     <EditText
-        android:id="@+id/edtNome"
+        android:id="@+id/edtNomeCandidato"
         android:layout_width="328dp"
         android:layout_height="49dp"
         android:layout_marginEnd="8dp"
@@ -23,21 +23,21 @@
     <EditText
         android:id="@+id/edtPartido"
         android:layout_width="328dp"
-        android:layout_height="wrap_content"
+        android:layout_height="43dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/edtpartido"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+        app:layout_constraintTop_toBottomOf="@+id/edtNomeCandidato" />
 
     <EditText
         android:id="@+id/edtNumeroUrna"
         android:layout_width="wrap_content"
-        android:layout_height="52dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -52,7 +52,7 @@
     <EditText
         android:id="@+id/edtCargo"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_height="47dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -67,10 +67,10 @@
     <EditText
         android:id="@+id/edtNumeroVotos"
         android:layout_width="wrap_content"
-        android:layout_height="53dp"
+        android:layout_height="39dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/edtnvotos"
         android:inputType="number"
