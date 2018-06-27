@@ -123,7 +123,7 @@
 
     <EditText
         android:id="@+id/edtMunicipio"
-        android:layout_width="178dp"
+        android:layout_width="274dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
