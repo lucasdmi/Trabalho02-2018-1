@@ -34,7 +34,7 @@ public class EleitorAdapter extends RecyclerView.Adapter{
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context)
-                                .inflate(R.layout.item_eleitor, parent, false);
+                                .inflate(R.layout.item_eleitor_cv, parent, false);
                 EleitorViewHolder eleitorViewHolder = new EleitorViewHolder(view);
 
                 return eleitorViewHolder;

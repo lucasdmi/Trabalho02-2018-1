@@ -48,7 +48,6 @@ public class Candidato extends RealmObject implements Serializable {
 
 
 
-
     public int getId() {
         return id;
     }

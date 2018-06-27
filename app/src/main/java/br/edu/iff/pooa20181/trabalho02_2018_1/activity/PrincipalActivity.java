@@ -12,7 +12,7 @@ import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 
 public class PrincipalActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
-    private String[] activities = {"ListaEleitorActivity"};
+    private String[] activities = {"ListaEleitor"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
