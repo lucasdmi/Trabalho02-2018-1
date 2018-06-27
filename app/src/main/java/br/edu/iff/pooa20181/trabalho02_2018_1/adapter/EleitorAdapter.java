@@ -86,7 +86,7 @@ public class EleitorAdapter extends RecyclerView.Adapter{
             secao = (TextView) itemView.findViewById(R.id.tvSecao);
 
             txtNomeEleitor = (TextView) itemView.findViewById(R.id.textNome);
-            txtNumeroTitulo = (TextView) itemView.findViewById(R.id.textNome);
+            txtNumeroTitulo = (TextView) itemView.findViewById(R.id.textNumeroTitulo);
             txtZona = (TextView) itemView.findViewById(R.id.textZona);
             txtSecao = (TextView) itemView.findViewById(R.id.textSecao);
 

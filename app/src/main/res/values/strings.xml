@@ -11,4 +11,5 @@
     <string name="btAlterar">Alterar</string>
     <string name="btExcluir">Excluir</string>
     <string name="title_activity_lista_eleitor">ListaEleitor</string>
+    <string name="title_activity_lista_candidato">ListaCandidato</string>
 </resources>

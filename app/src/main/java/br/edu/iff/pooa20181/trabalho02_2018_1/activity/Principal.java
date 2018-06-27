@@ -12,8 +12,8 @@ import br.edu.iff.pooa20181.trabalho02_2018_1.R;
 
 public class Principal extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
-    private String[] activities = {"ListaEleitor"};
-    private String[] itemMenu = {"Eleitor"};
+    private String[] activities = {"ListaEleitor", "ListaCandidato"};
+    private String[] itemMenu = {"Eleitor", "Candidato"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
