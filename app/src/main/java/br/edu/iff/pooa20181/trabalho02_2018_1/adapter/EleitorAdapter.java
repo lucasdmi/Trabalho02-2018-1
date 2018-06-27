@@ -22,8 +22,8 @@ public class EleitorAdapter extends RecyclerView.Adapter{
     private Context context;
     private static  ClickRecyclerViewListener clickRecyclerViewListener;
 
-    public EleitorAdapter(List<Eleitor> eventos, Context context,ClickRecyclerViewListener clickRecyclerViewListener) {
-                this.eleitores = eventos;
+    public EleitorAdapter(List<Eleitor> eleitores, Context context,ClickRecyclerViewListener clickRecyclerViewListener) {
+                this.eleitores = eleitores;
                 this.context = context;
                 this.clickRecyclerViewListener = clickRecyclerViewListener;
     }
@@ -36,22 +36,23 @@ public class EleitorAdapter extends RecyclerView.Adapter{
         View view = LayoutInflater.from(context)
                                 .inflate(R.layout.item_eleitor_cv, parent, false);
                 EleitorViewHolder eleitorViewHolder = new EleitorViewHolder(view);
-
                 return eleitorViewHolder;
 
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
+
         EleitorViewHolder eleitorHolder = (EleitorViewHolder) viewHolder;
 
-        Eleitor eleitor = eleitores.get(position);
+        Eleitor eleitor = this.eleitores.get(position);
 
         eleitorHolder.nomeEleitor.setText(eleitor.getNome());
-        eleitorHolder.nomeMaeEleitor.setText(eleitor.getNomeMae());
-        eleitorHolder.dataNascimento.setText(eleitor.getDataNascimento().toString());
+        eleitorHolder.numeroTitulo.setText(eleitor.getNumeroTitulo());
+        eleitorHolder.zona.setText(eleitor.getZona());
+        eleitorHolder.secao.setText(eleitor.getSecao());
 
-        Log.i("------aaaa------", eleitor.getNome());
+
 
 
 
@@ -60,22 +61,23 @@ public class EleitorAdapter extends RecyclerView.Adapter{
 
     @Override
     public int getItemCount() {
-        return this.eleitores.size();
+        return eleitores.size();
     }
 
     public class EleitorViewHolder extends RecyclerView.ViewHolder{
 
         private final TextView nomeEleitor;
-        private final TextView nomeMaeEleitor;
-        private final TextView dataNascimento;
+        private final TextView numeroTitulo;
+        private final TextView zona;
+        private final TextView secao;
 
         public EleitorViewHolder(View itemView){
             super(itemView);
 
             nomeEleitor = (TextView) itemView.findViewById(R.id.tvNomeEleitor);
-            nomeMaeEleitor = (TextView) itemView.findViewById(R.id.tvNomeMaeEleitor);
-            dataNascimento = (TextView) itemView.findViewById(R.id.tvDataNascimentoEleitor);
-
+            numeroTitulo = (TextView) itemView.findViewById(R.id.tvNumeroTitulo);
+            zona = (TextView) itemView.findViewById(R.id.tvZona);
+            secao = (TextView) itemView.findViewById(R.id.tvSecao);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
