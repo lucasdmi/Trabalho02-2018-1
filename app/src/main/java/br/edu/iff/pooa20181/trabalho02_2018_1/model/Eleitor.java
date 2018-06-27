@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class Eleitor {
 
+
+
     private int id;
-
-
     private String nome;
     private String nomeMae;
     private Date dataNascimento;
