@@ -74,6 +74,7 @@ public class Eleitor extends RealmObject implements Serializable{
     public Date getDataNascimento() {
         return dataNascimento;
     }
+
     public String getNumeroTitulo() {
         return numeroTitulo;
     }
