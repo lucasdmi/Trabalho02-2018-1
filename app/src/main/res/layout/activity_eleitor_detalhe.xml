@@ -8,7 +8,7 @@
 
     <EditText
         android:id="@+id/edtNome"
-        android:layout_width="316dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
@@ -22,12 +22,12 @@
 
     <EditText
         android:id="@+id/edtNomeMae"
-        android:layout_width="317dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
-        android:hint="Nome da Mãe"
+        android:hint="@string/tNomeMae"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.16"
@@ -36,7 +36,7 @@
 
     <EditText
         android:id="@+id/edtData"
-        android:layout_width="178dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -50,7 +50,7 @@
 
     <EditText
         android:id="@+id/edtNumeroTitulo"
-        android:layout_width="178dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:ems="10"
@@ -63,7 +63,7 @@
 
     <EditText
         android:id="@+id/edtZona"
-        android:layout_width="178dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -77,7 +77,7 @@
 
     <EditText
         android:id="@+id/edtSecao"
-        android:layout_width="178dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -123,7 +123,7 @@
 
     <EditText
         android:id="@+id/edtMunicipio"
-        android:layout_width="274dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"

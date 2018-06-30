@@ -49,7 +49,7 @@ public class CandidatoAdapter extends RecyclerView.Adapter{
             candidatoHolder.numeroUrna.setText(candidato.getNumeroUrna());
             candidatoHolder.cargo.setText(candidato.getCargo());
 
-            candidatoHolder.txtNomeCandidato.setText("Nome do Candidato: ");
+            candidatoHolder.txtNomeCandidato.setText("Nome: ");
             candidatoHolder.txtPartido.setText("Partido: ");
             candidatoHolder.txtCargo.setText("Cargo: ");
             candidatoHolder.txtNumeroUrna.setText("Número da Urna");
